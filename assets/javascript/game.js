@@ -1,79 +1,54 @@
-// $(document).ready(function () {
+ $(document).ready(function () {
+    //Ben Object
+    var Ben= {
+		nickName: 'ben',
+		name: 'Ben Kenobi',
+		healthpoints: 100,
+		attack: 10,
+		image: ' <img src="assets/images/Ben Kenobi.jpg" class="image img-responsive" style="width:100%;Height:100%" />'
+	};
 
-//     console.log("Wanna Play Again!! huh Lets Guess");
+	// KyloRen object
+	var KyloRen = {
+		nickName: 'kylo',
+		name: 'KyloRen',
+		healthpoints: 120,
+		attack: 8,
+		image: '<img src="assets/images/KyloRen.png" class="image img-responsive" style="width:100%;Height:100%" />'
+	};
 
-//     var winCounter = 0;
-//     var looseCounter = 0;
-//     var GussessLeftCount = 10;
-//     var NewParaText = "0";
-//     var isPlayagain = false;
+	// Obi object
+	var Obi = {
+		nickName: 'obi',
+		name: 'Obi Wan',
+		healthpoints: 150,
+		attack: 2,
+		image: '<img src="assets/images/obi-wan-spin-off.jpg" class="image img-responsive" style="width:100%;Height:100%" />'
+	};
 
-//     //   Array for Alphabates- Here we are provided an initial array of letters.
-//     var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+	// Darth object
+	var Darth = {
+		nickName: 'darth',
+		name: 'Darth Maul',
+		healthpoints: 80,
+		attack: 7,
+		image: ' <img src="assets/images/Darth.jpeg" class="image img-responsive" style="width:100%;Height:100%" />'
+    };
+    
+    //Declaring all globlal objects here 	
+	var characters = [];
+	var $yourCharacter;
+	var $currentEnemy;
+	// Character's healthpoints and attack
+	var yourHealth;
+	var yourAttack;
+	// current's enemy's healthpoints and attack
+	var currentEnemyHealth = 0;
+	var currentEnemyAttack = 0;
 
-//     var PressedKeys = $("#PressedKey");
-//     var winCount = $("#WinPlaceHolder");
-//     var looseCount = $("#LoosesPlaceHolder");
-//     var guessLeft = $("#RemaningChances");
-//     var psychcPlayer = "0";
-
-//     // Gets Link for Theme Song
-//     var audioElement = document.createElement("audio");
-//     audioElement.setAttribute("src", "assets/electric-typewriter-daniel_simon.wav");
-
-//     //Reset Function to reset all variables and placeholders
-//     function resetAll() {
-//         GussessLeftCount = 9;
-//         winCounter = 0;
-//         looseCounter = 0;
-//         PressedKeys.text(" ");
-//         winCount.text(0);
-//         looseCount.text(0);
-//         guessLeft.text(9);
-//         audioElement.pause();
-//         console.log("Reset all variables-------");
-//     }
-//     //Call function Reset All
-//     resetAll();
-//     ////////////////////////////////////////////////////////
-//     document.onkeyup = function (event) {
-//         //Add check for getting only alphabates 
-
-//         if (event.keyCode >= 65 && event.keyCode <= 90) {
-//             console.log("input was a-z");
-//             NewParaText = event.key;
-//             //NewPara.toLowerCase()
-//             NewParaText = NewParaText.toUpperCase();
-//             PressedKeys.append(NewParaText);
-//             audioElement.play();
-//             var psychcPlayer = "0";
-//             var random = Math.floor(Math.random() * 26) + 1;
-//             psychcPlayer = letters[random];
-//             console.log(psychcPlayer);
-//             console.log(NewParaText);
-//             GussessLeftCount--;
-//             guessLeft.text(GussessLeftCount);
-//             if (NewParaText == psychcPlayer) {
-//                 //Print counter variables on UI
-//                 winCounter++
-//                 winCount.text(winCounter);
-//             }
-//             else {
-//                 looseCounter++
-//                 looseCount.text(looseCounter);
-//             }
-
-//             //Game is over, user wants to play again
-//             if (GussessLeftCount == 0) {
-//                 //isPlayagain = confirm("You Wanna Play Again??");
-//                 resetAll();
-//             }
-//         }
-//         else{
-//             var msgText = "Please press key's A-Z.......";
-//             $("#DisplayMessage").text(msgText);
-//         }
-
-//     }
-
-// });
+	var counter = 0;
+	var compoundAttack = 0;
+    var isThereOpponent = false;
+    
+    var charobjarray = [Ben,KyloRen,Obi,Darth];
+});
