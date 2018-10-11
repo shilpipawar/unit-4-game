@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="assets/css/Reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
+        
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -19,56 +20,43 @@
 </head>
 
 <body>
+    <!--Page on load will show the Player Here-->
     <div class="container">
-            <h1 id="mainTitle">RPG Game</h1>
-        <div class="row">
-                <div class="col-sm">
-                <h2>PICK YOUR CHARACTER</h2>
-            </div>
-        </div>
-        <!-- Adding images for player -->
-        <div class="row">
-            <div class="col-sm-9">
-                <div class="row playerselectorRow">
-                    <div class="col-sm-3">
-                        <img src="assets/images/Ben Kenobi.jpg" class=" img-responsive" style="width:100%;Height:100%" />
-                    </div>
-                    <div class="col-sm-3">
-                        <img src="assets/images/KyloRen.png" class=" img-responsive" style="width:100%;Height:100%" />
-                    </div>
-                    <div class="col-sm-3">
-                        <img src="assets/images/obi-wan-spin-off.jpg" class=" img-responsive" style="width:100%;Height:100%" />
-                    </div>
-                    <div class="col-sm-3">
-                        <img src="assets/images/images (1).jpeg" class=" img-responsive" style="width:100%;Height:100%" />
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="row addapponentRow">
-            <div class="col-sm-3">
-                    <img src="assets/images/Ben Kenobi.jpg" class=" img-responsive" style="width:80%;Height:80%" />
-            </div>
-            <div class="col-sm-3">
-                    <img src="assets/images/Ben Kenobi.jpg" class=" img-responsive" style="width:80%;Height:80%" />
-            </div>
-            <div class="col-sm-3">
-                    <img src="assets/images/Ben Kenobi.jpg" class=" img-responsive" style="width:80%;Height:80%" />
-            </div>
-        </div>
-        <br>
-        <div class="row selectedEnemyRow">
-                <div class="col-sm-3">
-                        <img src="assets/images/Ben Kenobi.jpg" class=" img-responsive" style="width:80%;Height:80%" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3">
-                    <button type="button">Attack</button>
-                </div>
-            </div>
+        <h1 id="mainTitle">RPG GAME</h1>
     </div>
+    <div class="container">
+        <div class="row restart">
+           
+            <div id="players">
+                <div class='title'>
+                        Pick your Player
+                </div>
+            </div>
+        </div>
+    <!-- </div> -->
+    <!--Add/Append  Player here utill ends-->
+    <!-- Append remaining enemies here until -->
+	<!-- <div class='container'> -->
+            <div class='row'>
+                    <div id='remainingEnemies'></div>
+                </div>
+    <!--Placeholder for both selected player-->
+    <!-- <div class='container'> -->
+        <div class='row'>
+            <div class='col-md-5' id="yourCharacter"></div>
+            <div class='col-md-2' id="AttackButton"></div>
+            <div class='col-md-5' id="currentEnemy"></div>
+        </div>
+    <!-- </div> -->
+    <!-- End of Battling PlaceHolder-->
+
+        </div>
+        <!--Div for adding buttons-->
+        <div class ="container">
+            <div class="row">
+
+            </div>
+        </div>
 </body>
 
 </html>

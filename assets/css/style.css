@@ -24,3 +24,81 @@ h2 {
     text-align: center;
     border-block-end-width: 5px;
 }
+
+/* Add style for all player and buttons on page */
+/*Where characters are appended initially*/
+#players {
+	width:100%;
+	display: inline-block;
+}
+
+.character {
+	font-family: aliens-and-cows, sans-serif;
+	font-size: 40px;
+	float: left;
+	text-align: center;
+	display:block;
+	width:200px;
+	margin: 10px 0;
+}
+/*==================================*/
+
+.PlayerName, .PlayerHealth {
+	color: cadetblue;
+	width:100%;
+	margin: 0 auto;
+}
+
+.characterHealth {
+	font-family: sans-serif;
+	font-size:20px;
+}
+
+.image {
+	width:100%;
+	display:block;
+	margin: auto;
+}
+
+.title {
+	text-align: center;
+	font-size: 50px;
+	color: cadetblue;
+	font-family: aliens-and-cows, sans-serif;
+	text-decoration: underline;
+}
+
+/*Picking a character*/
+.yourCharacter, .currentEnemy {
+	font-family: aliens-and-cows, sans-serif;
+	font-size: 40px;
+	clear:all;
+	text-align: center;
+	display:block;
+	width:250px;
+	margin: 10px auto;
+}
+
+.enemy {
+	font-family: aliens-and-cows, sans-serif;
+	font-size: 30px;
+	clear:all;
+	text-align: center;
+	display:inline-block;
+	width:200px;
+	margin: 10px 95px;
+
+}
+
+#lightSabers {
+	margin-top: 60px;
+	width: 100%;
+}
+
+.restart {
+	text-align: center;
+}
+
+.restartBtn {
+	margin-top: 300px;
+}
