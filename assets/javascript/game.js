@@ -41,6 +41,7 @@ $(document).ready(function () {
 
 	var yourCharacter;
 	var currentEnemy;
+
 	// Character's healthpoints and attack
 	var yourHealth;
 	var yourAttack;
@@ -57,7 +58,7 @@ $(document).ready(function () {
 	var charobjarray = [Ben, KyloRen, Obi, Darth];
 
 	////////////////////////////////////////Declaring Functions////////////////////////////////////////////////////////////////////
-	//Creating function to Start Game and place all character///
+							//Creating function to Start Game and place all character///
 	function createPlayers(obj) {
 		if (obj.length === 4) {
 			console.log("I am in")
@@ -120,19 +121,19 @@ $(document).ready(function () {
 			$('#players').empty();
 			$('#players').append('<div class="title">Defender</div>')
 
-			$yourCharacter = $(this);
-			$yourCharacter.addClass('yourCharacter');
-			$yourCharacter.removeClass('col-sm-3 players');
+			yourCharacter = $(this);
+			yourCharacter.addClass('yourCharacter');
+			yourCharacter.removeClass('col-sm-3 players');
 
-			yourHealth = parseInt($yourCharacter.attr('data_health'));
-			yourAttack = parseInt($yourCharacter.attr('data_attack'));
+			yourHealth = parseInt(yourCharacter.attr('data_health'));
+			yourAttack = parseInt(yourCharacter.attr('data_attack'));
 
-			$('#players').append($yourCharacter);
+			$('#players').append(yourCharacter);
 
 			$('#remainingEnemies').append('<div class="title">Pick Your Enemy</div>');
 
 			// remove the chosen character and then run the createPlayers function again to recreate the 'enemies'
-			var indexRemove = players.indexOf($yourCharacter.attr('data_nickName'))
+			var indexRemove = players.indexOf(yourCharacter.attr('data_nickName'))
 			charobjarray.splice(indexRemove, 1);
 
 			// call createCharacters function again, but this time there are only 3
@@ -156,7 +157,7 @@ $(document).ready(function () {
 			currentEnemy.removeClass('enemy');
 
 			// append your character and enemy picked to the fighting area
-			$('#yourCharacter').append($yourCharacter);
+			$('#yourCharacter').append(yourCharacter); //Append in char field
 
 			//Add Attack Button
 			$('#AttackBtn').append('<button type="button" class="btn btn-danger" id ="fightStart">Attack</button>');
@@ -241,86 +242,6 @@ $(document).ready(function () {
 			location.reload();
 		};
 	};
-
-	//Restart the game
-	
-	//New Function for Fight
-	// function fight() {
-
-	// 	// We need to isolate the lightsabers click function in order to create some conditions that allow me to stop the game when it doesn't meet some parameters
-
-	// 		counter++;
-	// 		compoundAttack = parseInt(yourAttack);
-
-	// 		//compoundAttack += yourAttack;
-			
-	// 		if(isNaN(compoundAttack))
-	// 		{
-	// 			alert("NaN Compound attack");
-	// 		}
-			
-	// 		if(isNaN(yourAttack))
-	// 		{
-	// 			alert("Yes yourhealth NaN");
-	// 		}
-			
-	// 		console.log("COMPOUND ATTACK: ", compoundAttack);
-
-	// 		// After attack
-	// 		currentEnemyHealth = currentEnemyHealth - compoundAttack;
-	// 		yourHealth = yourHealth - currentEnemyAttack;
-	// 		console.log("CURRENT ENEMY ATTACK: ", currentEnemyAttack);
-	// 		console.log("ENEMY HEALTH: ",currentEnemyHealth);
-	// 		console.log("YOUR HEALTH: ",yourHealth);
-
-
-	// 		$('.currentEnemy > .characterHealth').html(currentEnemyHealth).animate({
-	// 			fontSize: 60,
-	// 			color: '#FF0000'
-	// 		}, 300, function() {
-	// 			$(this).animate({
-	// 				fontSize: 20,
-	// 				color: 'white'
-	// 			}, 300);
-	// 		});
-	// 		$('.yourCharacter > .characterHealth').html(yourHealth).animate({
-	// 			fontSize: 60,
-	// 			color: '#FF0000'
-	// 		}, 300, function() {
-	// 			$(this).animate({
-	// 				fontSize: 20,
-	// 				color: 'white'
-	// 			}, 300);
-	// 		});
-
-	// 		if (currentEnemyHealth <= 0 && yourHealth > 0) {
-
-	// 			isThereOpponent = false;
-	// 			yourHealth = yourHealth - currentEnemyAttack;
-
-	// 			console.log("YOU HAVE DEFEATED " + $currentEnemy.attr('data_nickName'));
-	// 			console.log('IS THERE OPPONENT: ' + isThereOpponent)
-
-	// 			$('#currentEnemy').empty();
-
-	// 			// currentEnemyAttack = 0;
-
-	// 			if (players.length === 0) {
-	// 				alert("Congrats, You WON");
-	// 				restartGame();
-	// 			} else {
-	// 				pickYourOpponent();
-	// 			};
-	// 		}
-
-	// 		else if (yourHealth <= 0) {
-	// 			alert("You have been defeated");
-	// 			alert("try again");
-	// 			restartGame();
-	// 		};
-	// };
-
-	
 	
 	function restartGame() {
 		$('#RestartButton').on('click', function () {
@@ -337,8 +258,6 @@ $(document).ready(function () {
 		pickYourOpponent();
 		AttackFun();
 	}
-	//TEST CALL
-	//createPlayers(charobjarray);
 
 	// Start the game
 	startGame();
