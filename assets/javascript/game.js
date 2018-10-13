@@ -38,8 +38,7 @@ $(document).ready(function () {
 
 	//Declaring all globlal objects here 	
 	var players = [];
-	// var $yourCharacter;
-	// var $currentEnemy;
+
 	var yourCharacter;
 	var currentEnemy;
 	// Character's healthpoints and attack
@@ -55,7 +54,7 @@ $(document).ready(function () {
 	
 	var isThereOpponent = false;
 
-	var charobjarray = [Ben, KyloRen, Obi, Darth];
+	var charobjarray = [Ben, KyloRen, Obi, Darth]; //Array for Players
 
 	////////////////////////////////////////Declaring Functions////////////////////////////////////////////////////////////////////
 	//Creating function to Start Game and place all character///
@@ -88,7 +87,7 @@ $(document).ready(function () {
 			players = [];
 			console.log("obj.length" + obj.length);
 
-			$('#remainingEnemies').append('<div class="title">Remaining Enemies</div>')
+			$('#remainingEnemies').append('<div class="title">Enemies Available to attack</div>')
 			for (var i = 0; i < obj.length; i++) {
 
 				// jQuery Object that takes the attributes of each character
@@ -119,7 +118,7 @@ $(document).ready(function () {
 		// this function should pick your player and then automaticaly make the other charaters enemies.
 		$('.character').on('click', function () {
 			$('#players').empty();
-			$('#players').append('<div class="title">Your Player</div>')
+			$('#players').append('<div class="title">Defender</div>')
 
 			$yourCharacter = $(this);
 			$yourCharacter.addClass('yourCharacter');
@@ -157,10 +156,11 @@ $(document).ready(function () {
 			currentEnemy.removeClass('enemy');
 
 			// append your character and enemy picked to the fighting area
-			$('#yourCharacter').append($yourCharacter);
+			$('#yourCharacter').append(yourCharacter);
 
 			//Add Attack Button
 			$('#AttackBtn').append('<button type="button" class="btn btn-danger" id ="fightStart">Attack</button>');
+		
 
 			$('#currentEnemy').append(currentEnemy);
 
