@@ -6,7 +6,7 @@ $(document).ready(function () {
 		name: 'Ben Kenobi',
 		healthpoints: 100,
 		attackPoints: 11,
-		image: ' <img src="assets/images/Ben Kenobi.jpg" class="image img-responsive" style="width:100%;Height:100%" />'
+		image: ' <img src="assets/images/c.png" class="image img-responsive" style="width:100%;Height:100%" />'
 	};
 
 	// KyloRen object
@@ -15,7 +15,7 @@ $(document).ready(function () {
 		name: 'Kylo Ren',
 		healthpoints: 120,
 		attackPoints: 8,
-		image: '<img src="assets/images/KyloRen.png" class="image img-responsive" style="width:100%;Height:100%" />'
+		image: '<img src="assets/images/KyloRen_IMAGE.jpg" class="image img-responsive" style="width:100%;Height:100%" />'
 	};
 
 	// Obi object
@@ -24,7 +24,7 @@ $(document).ready(function () {
 		name: 'Obi Wan',
 		healthpoints: 150,
 		attackPoints: 2,
-		image: '<img src="assets/images/obi-wan-spin-off.jpg" class="image img-responsive" style="width:100%;Height:100%" />'
+		image: '<img src="assets/images/Start.jpeg" class="image img-responsive" style="width:100%;Height:100%" />'
 	};
 
 	// Darth object
@@ -33,7 +33,7 @@ $(document).ready(function () {
 		name: 'Darth Maul',
 		healthpoints: 80,
 		attackPoints: 7,
-		image: ' <img src="assets/images/Darth.jpeg" class="image img-responsive" style="width:100%;Height:100%" />'
+		image: ' <img src="assets/images/DARTH_IMAGE.jpg" class="image img-responsive" style="width:100%;Height:100%" />'
 	};
 
 	//Declaring all globlal objects here 	
@@ -201,7 +201,7 @@ $(document).ready(function () {
 		counter++;
 
 		compoundAttack = parseInt(yourAttack);
-		
+
 		compoundAttack += yourAttack;
 
 		console.log("COMPOUND ATTACK: ", compoundAttack);

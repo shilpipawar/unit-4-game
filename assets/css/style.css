@@ -17,7 +17,7 @@ color: #333;
 h2 {
     font-family: aliens-and-cows, sans-serif;
     text-decoration: underline;
-    font-size: 30px;
+    font-size: 25px;
     color: cadetblue;
     font-weight: bold;
     padding: 25px;
@@ -34,7 +34,7 @@ h2 {
 
 .character {
 	font-family: aliens-and-cows, sans-serif;
-	font-size: 40px;
+	font-size: 20px;
 	float: left;
 	text-align: center;
 	display:block;
@@ -62,7 +62,7 @@ h2 {
 
 .title {
 	text-align: center;
-	font-size: 50px;
+	font-size: 20px;
 	color: cadetblue;
 	font-family: aliens-and-cows, sans-serif;
 	text-decoration: underline;
@@ -71,7 +71,7 @@ h2 {
 /*Picking a character*/
 .yourCharacter, .currentEnemy {
 	font-family: aliens-and-cows, sans-serif;
-	font-size: 40px;
+	font-size: 20px;
 	clear:all;
 	text-align: center;
 	display:block;
