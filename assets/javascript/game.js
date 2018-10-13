@@ -214,24 +214,9 @@ $(document).ready(function () {
 		console.log("YOUR HEALTH: ", yourHealth);
 
 		//Update UI with the current score//////////////
-		$('.currentEnemy > .characterHealth').html(currentEnemyHealth).animate({
-			fontSize: 60,
-			color: '#FF0000'
-		}, 300, function () {
-			$(this).animate({
-				fontSize: 20,
-				color: 'white'
-			}, 300);
-		});
-		$('.yourCharacter > .characterHealth').html(yourHealth).animate({
-			fontSize: 60,
-			color: '#FF0000'
-		}, 300, function () {
-			$(this).animate({
-				fontSize: 20,
-				color: 'white'
-			}, 300);
-		});
+		$('.currentEnemy > .PlayerHealth').html(currentEnemyHealth);
+		$('.yourCharacter > .PlayerHealth').html(yourHealth);
+
 		///////////////////////////////////////////////
 		if (currentEnemyHealth <= 0 && yourHealth > 0) {
 
