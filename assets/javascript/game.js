@@ -38,8 +38,10 @@ $(document).ready(function () {
 
 	//Declaring all globlal objects here 	
 	var players = [];
-	var $yourCharacter;
-	var $currentEnemy;
+	// var $yourCharacter;
+	// var $currentEnemy;
+	var yourCharacter;
+	var currentEnemy;
 	// Character's healthpoints and attack
 	var yourHealth;
 	var yourAttack;
@@ -64,19 +66,19 @@ $(document).ready(function () {
 			for (var i = 0; i < obj.length; i++) {
 
 				// jQuery Object that takes the attributes of each character
-				var $Player = $('<div id=' + obj[i].nickName + '>');
-				$Player.append('<div class="PlayerName">' + obj[i].name);
-				$Player.append(obj[i].image);
-				$Player.append('<div class="PlayerHealth">' + obj[i].healthpoints);
-				$Player.attr('data_nickName', obj[i].nickName);
-				$Player.attr("data_name", obj[i].name);
-				$Player.attr('data_attack', obj[i].attackPoints);
-				$Player.attr('data_health', obj[i].healthpoints);
-				$Player.attr('class', 'character col-sm-3');
+				var Player = $('<div id=' + obj[i].nickName + '>');
+				Player.append('<div class="PlayerName">' + obj[i].name);
+				Player.append(obj[i].image);
+				Player.append('<div class="PlayerHealth">' + obj[i].healthpoints);
+				Player.attr('data_nickName', obj[i].nickName);
+				Player.attr("data_name", obj[i].name);
+				Player.attr('data_attack', obj[i].attackPoints);
+				Player.attr('data_health', obj[i].healthpoints);
+				Player.attr('class', 'character col-sm-3');
 
 				players.push(obj[i].nickName);
 
-				$("#players").append($Player);
+				$("#players").append(Player);
 				console.log("value of i" + i + obj.length);
 			}
 		} // end of if statement
@@ -90,23 +92,23 @@ $(document).ready(function () {
 			for (var i = 0; i < obj.length; i++) {
 
 				// jQuery Object that takes the attributes of each character
-				var $Player = $('<div id=' + obj[i].nickName + '>');
-				$Player.append('<div class="PlayerName">' + obj[i].name);
-				$Player.append(obj[i].image);
-				$Player.append('<div class="PlayerHealth">' + obj[i].healthpoints);
+				var Player = $('<div id=' + obj[i].nickName + '>');
+				Player.append('<div class="PlayerName">' + obj[i].name);
+				Player.append(obj[i].image);
+				Player.append('<div class="PlayerHealth">' + obj[i].healthpoints);
 				// att data attributes to use with the logic of the game
-				$Player.attr('data_nickName', obj[i].nickName);
-				$Player.attr("data_name", obj[i].name);
-				$Player.attr('data_attack', obj[i].attackPoints);
-				$Player.attr('data_health', obj[i].healthpoints);
-				$Player.attr('class', 'enemy');
+				Player.attr('data_nickName', obj[i].nickName);
+				Player.attr("data_name", obj[i].name);
+				Player.attr('data_attack', obj[i].attackPoints);
+				Player.attr('data_health', obj[i].healthpoints);
+				Player.attr('class', 'enemy');
 
 				players.push(obj[i].nickName);
 
-				$('#remainingEnemies').append($Player);
+				$('#remainingEnemies').append(Player);
 			}
 
-			if (!$currentEnemy) {
+			if (!currentEnemy) {
 				pickYourOpponent();
 			}
 		}
@@ -149,10 +151,10 @@ $(document).ready(function () {
 			$('#AttackBtn').empty();
 
 			// enemy picked
-			$currentEnemy = $(this);
+			currentEnemy = $(this);
 
-			$currentEnemy.addClass('currentEnemy');
-			$currentEnemy.removeClass('enemy');
+			currentEnemy.addClass('currentEnemy');
+			currentEnemy.removeClass('enemy');
 
 			// append your character and enemy picked to the fighting area
 			$('#yourCharacter').append($yourCharacter);
@@ -160,13 +162,13 @@ $(document).ready(function () {
 			//Add Attack Button
 			$('#AttackBtn').append('<button type="button" class="btn btn-danger" id ="fightStart">Attack</button>');
 
-			$('#currentEnemy').append($currentEnemy);
+			$('#currentEnemy').append(currentEnemy);
 
 			//Set flag true - found enemy
 			isThereOpponent = true;
 
 			//Remove character from the index and call createCharacters again
-			var indexRemove = players.indexOf($currentEnemy.attr('data_nickName'));
+			var indexRemove = players.indexOf(currentEnemy.attr('data_nickName'));
 			console.log("indexRemove" + indexRemove);
 			charobjarray.splice(indexRemove, 1);
 
@@ -176,9 +178,9 @@ $(document).ready(function () {
 			console.log(currentEnemyAttack);
 
 			// Your enemy's health and attack
-			currentEnemyAttack = parseInt($currentEnemy.attr('data_attack'));
+			currentEnemyAttack = parseInt(currentEnemy.attr('data_attack'));
 			console.log("CURRENT ENEMY ATTACK: ", currentEnemyAttack);
-			currentEnemyHealth = parseInt($currentEnemy.attr('data_health'));
+			currentEnemyHealth = parseInt(currentEnemy.attr('data_health'));
 
 			console.log('IS THERE OPPONENT: ' + isThereOpponent);
 			console.log("currentEnemyHealth: " + currentEnemyHealth);
@@ -223,7 +225,7 @@ $(document).ready(function () {
 			isThereOpponent = false;
 			yourHealth = yourHealth - currentEnemyAttack;
 
-			console.log("YOU HAVE DEFEATED " + $currentEnemy.attr('data_nickName'));
+			console.log("YOU HAVE DEFEATED " + currentEnemy.attr('data_nickName'));
 			console.log('IS THERE OPPONENT: ' + isThereOpponent)
 
 			$('#currentEnemy').empty();
