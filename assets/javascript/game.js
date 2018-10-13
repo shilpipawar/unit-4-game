@@ -54,7 +54,7 @@ $(document).ready(function () {
 	
 	var isThereOpponent = false;
 
-	var charobjarray = [Ben, KyloRen, Obi, Darth]; //Array for Players
+	var charobjarray = [Ben, KyloRen, Obi, Darth];
 
 	////////////////////////////////////////Declaring Functions////////////////////////////////////////////////////////////////////
 	//Creating function to Start Game and place all character///
@@ -156,11 +156,10 @@ $(document).ready(function () {
 			currentEnemy.removeClass('enemy');
 
 			// append your character and enemy picked to the fighting area
-			$('#yourCharacter').append(yourCharacter);
+			$('#yourCharacter').append($yourCharacter);
 
 			//Add Attack Button
 			$('#AttackBtn').append('<button type="button" class="btn btn-danger" id ="fightStart">Attack</button>');
-		
 
 			$('#currentEnemy').append(currentEnemy);
 
